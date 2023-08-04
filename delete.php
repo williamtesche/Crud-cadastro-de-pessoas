@@ -5,6 +5,7 @@ include("bootstrap.php");
 // Pegando ID para excluir
 $id = $_GET['id'];
 
+
 //apagar pessoa do banco de dados 
 $sql = "DELETE FROM `nome` WHERE `id` = $id";
 
