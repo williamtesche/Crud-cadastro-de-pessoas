@@ -8,6 +8,7 @@ $nome = $_POST["nome"];
 
 // preparar query para salvar
 $sql = "INSERT INTO `nome`( `nome`) VALUES ('$nome')";
+//$sql = "INSERT INTO nome`(`nome`, `id`) VALUES ('$nome','$id')";
 
 // executa a query
 if (mysqli_query($conn, $sql)) {
