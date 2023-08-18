@@ -10,19 +10,18 @@ $nome = $_POST["nome"];
 $sql = "INSERT INTO `nome`( `nome`) VALUES ('$nome')";
 //$sql = "INSERT INTO nome`(`nome`, `id`) VALUES ('$nome','$id')";
 
+if("$nome" == ""){
+    encho"Nome invalido!";
+
 // executa a query
 if (mysqli_query($conn, $sql)) {
     echo "$nome cadastrado com sucesso!", 'success';
 } else
     echo "$nome Não foi cadastrado", 'danger';
 
-
-
-
 // desconecta do banco
 mysqli_close($conn);
 
-// envia mensagem de sucesso
 ?>
 <!DOCTYPE html>
 <html lang= "en">

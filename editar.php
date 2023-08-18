@@ -4,12 +4,15 @@
  
 include("bootstrap.php");
 
-$nome = $_GET['nome'];
+
  $id = $_GET['id'];
  $sql = "SELECT * FROM nome where id = $id";
+
  $result = mysqli_query($conn, $sql);
  $linha = mysqli_fetch_assoc($result);
- 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
