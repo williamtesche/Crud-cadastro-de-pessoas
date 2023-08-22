@@ -1,5 +1,8 @@
 <?php
 
+// Alerta
+$mensagem = "Nome invalido";
+
 // conectar no banco de dados
  include("bootstrap.php");
 
@@ -8,13 +11,20 @@ $nome = $_POST["nome"];
 
 // preparar query para salvar
 $sql = "INSERT INTO `nome`( `nome`) VALUES ('$nome')";
-//$sql = "INSERT INTO nome`(`nome`, `id`) VALUES ('$nome','$id')";
+
+if($nome == ""){
+    echo"<div class='alert alert-success'>$mensagem</div>";
+    
+}else{
+    if (mysqli_query($conn, $sql)) {
+        echo "$nome cadastrado com sucesso!";
+    } else
+        echo "$nome Não foi cadastrado", 'danger';
+    
+}
 
 // executa a query
-if (mysqli_query($conn, $sql)) {
-    echo "$nome cadastrado com sucesso!";
-} else
-    echo "$nome Não foi cadastrado", 'danger';
+
 
 // desconecta do banco
 mysqli_close($conn);
@@ -30,6 +40,7 @@ mysqli_close($conn);
     <title>Document</title>
 </head>
 <body>
+
 <a href="/crud/index.php">Voltar</a>
 
 </body>
