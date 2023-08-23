@@ -13,7 +13,7 @@ $nome = $_POST["nome"];
 $sql = "INSERT INTO `nome`( `nome`) VALUES ('$nome')";
 
 if($nome == ""){
-    echo"<div class='alert alert-success'>$mensagem</div>";
+    echo"<div class='alert alert-danger'>$mensagem</div>";
     
 }else{
     if (mysqli_query($conn, $sql)) {

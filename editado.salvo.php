@@ -1,5 +1,8 @@
 <?php
 
+//Mensagem
+$mensagem = "Usuário invalido";
+
 // conectando com o banco
 include("bootstrap.php");
 
@@ -7,21 +10,27 @@ include("bootstrap.php");
 $nome = $_POST['nome']; 
 $id = $_GET['id'];
 
-// die();
+if($nome == "" || $id == ""){
 
-//editar pessoa do banco de dados 
-$sql = "UPDATE `nome` SET `nome` = '$nome' where id = $id";
+    echo"<div class='alert alert-success'>$mensagem</div>";
+    
+}else{
+    //editar pessoa do banco de dados 
+    $sql = "UPDATE `nome` SET `nome` = '$nome' where id = $id";
 
-// executar o comando
-mysqli_query($conn,$sql);
+    // executar o comando
+    mysqli_query($conn,$sql);
 
-// desconecta do banco
-mysqli_close($conn);
+    // desconecta do banco
+    mysqli_close($conn);
 
 
  
-// mensagem de sucesso!
-echo "pessoa atualizada com sucesso!";
+    // mensagem de sucesso!
+    echo "pessoa atualizada com sucesso!";
+}
+
+
 ?>
  <!DOCTYPE html>
  <html lang="en">
