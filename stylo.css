@@ -124,3 +124,8 @@ form button {
 form button:hover {
     background: var(--color1-1);
 }
+.button{
+    text-align: center;
+    color: #32B292;
+    background-color: black;
+}
